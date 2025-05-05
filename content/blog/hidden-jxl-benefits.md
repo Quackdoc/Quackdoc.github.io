@@ -162,17 +162,17 @@ Yeah, that's pretty fast, "But Quack! CineForm is much faster then that! And Pro
 
 I'm not lying either, this was taken from December of year 2023 200+FPS with `mpv` under Wayland using Vulkan + mailbox using a Linux desktop with sway compositor.
 
-![marine-unison image here](https://media.discordapp.net/attachments/673202643916816384/1182221278430634014/image.png)
+![marine-unison image here](https://files.catbox.moe/l4qlzl.png)
 
-![many marine image here](https://media.discordapp.net/attachments/673202643916816384/1182221277776314398/image.png)
+![many marine image here](https://files.catbox.moe/9s8980.png)
 
 I made this video by encoding the video to png, then I used the following commandline to encode the PNG to JXL, I then muxed that JXL sequence into an mkv and played it back using `mpv` the command is as follows. `cjxl -e 3 -d 1 --faster_decoding=4`
 
 When encoding without the `faster_decoding` flag we get roughly half the speed as we do with it.
 
-![Slower marine-unison image here](https://cdn.discordapp.com/attachments/673202643916816384/1182221413856313384/image.png)
+![Slower marine-unison image here](https://files.catbox.moe/tnzgiz.png)
 
-![many marine-unison slow image here](https://cdn.discordapp.com/attachments/673202643916816384/1182221413357195276/image.png) 
+![many marine-unison slow image here](https://files.catbox.moe/j1vnom.png) 
 
 So how useful is this for a mezzanine? 200fps is just about scratching the surface as usable. I wouldn't use it in any complicated workflows, however if you are only working with 2 or 3 simultanious video clips at a time, Then JXL could very well be useful here. Im pretty excited to see how far JXL will go in this area. Faster CPUs will mean faster decode times, and I am sure that the `faster_decoding` flag could likely be optimized too. We may also see potential optimizations when it comes to libjxl's decoder, or potentially alternative, faster decoders.
 
